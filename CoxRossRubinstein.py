@@ -3,6 +3,9 @@ import copy
 import random
 from math import *
 
+
+# Implémentation du modèle de Cox-Rox-Rubinstein
+
 # ---PARAMETRES
 
 # Date d'échéance de l'option
@@ -12,7 +15,8 @@ N = 10
 r = 0.06
 
 # Probabilité que le prix monte
-p = 0.5
+# Remarque : le prix de l'option en t=0 ne dépend pas de la probabilité choisi
+p = 0.2
 q = 1-p
 
 # Variations possibles du cours de l'actif risqué à chaque instant
