@@ -6,7 +6,7 @@ from math import *
 # ---PARAMETRES
 
 # Date d'échéance de l'option
-N = 3
+N = 10
 
 # Rendement certain de l'actif sans rique
 r = 0.06
@@ -81,7 +81,7 @@ _C = [C[0][0]]
 _H = [H[0][0]]
 _H0 = [H0[0][0]]
 
-_V = [0]
+_V = [C[0][0]]
 
 # Création d'un chemin aléatoire dans l'arbre binaire associé à l'ensemble des prix possibles
 for i in range(1, N+1):
@@ -113,3 +113,10 @@ print("Simulation du cours de l'actif risqué : ", _S)
 
 # Quantité de l'actif risqué que doit possèder la banque à chaque instant
 print("Quantité de l'actif risqué que doit possèder la banque à chaque instant 1,...,N: ", _H)
+
+# Valeur du portefeuille de la banque à chaque instant
+# Remarque : à l'échéance, la valeur du portefeuille de la banque est égal au payoff du call, ce qui justifie la couverture parfaite
+print("Valeur du portefeuille de la banque à chaque instant : ",  _V)
+
+# Payoff du call
+print("Payoff du call : ", max(0, _S[N]-K))
